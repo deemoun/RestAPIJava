@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.deemoun'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit Jupiter API for writing tests
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'junit:junit:4.13.1'
+    // JUnit Jupiter Engine to run tests
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    // RestAssured for API testing
+    testImplementation 'io.rest-assured:rest-assured:4.4.0'
+
+    // To avoid conflicts between SLF4J versions brought in by RestAssured and any other library
+    testImplementation 'org.slf4j:slf4j-simple:1.7.30'
+
+    // Hamcrest for additional matchers
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+}
+
+test {
+    useJUnitPlatform()
+}
