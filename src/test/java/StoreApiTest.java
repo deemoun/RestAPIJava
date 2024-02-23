@@ -59,4 +59,12 @@ public class StoreApiTest {
         // Вывод информации о продукте и цене в консоль
         System.out.println("Product: " + actualProduct + ", Price: " + actualPrice);
     }
+    @Test
+    public void getProductsTest() {
+        when().
+                get("/products/1").
+                then().
+                statusCode(200);
+                //body("id", hasItems(1));
+    }
 }
